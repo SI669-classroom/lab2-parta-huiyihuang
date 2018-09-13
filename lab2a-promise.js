@@ -11,12 +11,25 @@ function flip() {
 //// Add code here that will "flip" the coin ten times and write the 
 //// result to the console (e.g. "Heads" or "Tails" for each flip).
 
-
+for (let i = 0; i < 10; i++) {
+    flip().then(
+        () => {console.log("Heads!")}, 
+        () => {console.log("Tails!")});
+}
 
 
 ///// Problem 2 - More fun...
 
 function countBig(bignum) {
+    start = Date.now();
+    let i = 0;
+    while (i < bignum){
+        i++;
+    }
+    let time_period = Date.now() - start
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {resolve()}, time_period);
+    });
     // Add code here that returns a Promise that will resolve after it has counted to bignum
 }
 
